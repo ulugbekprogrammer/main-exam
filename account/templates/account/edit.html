@@ -1,0 +1,23 @@
+{% extends 'shop/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block content %}
+    <div class="form" style="height: 750px; margin-top: 30px; width: 500px; margin-left: 500px;">
+        <h2>Edit Profile:</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {{user_form.as_p}}
+            {{profile_form.as_p}}
+            <input type="submit" value="Save" class="login-btn" style="margin-right: 150px; margin-left: 100px;">
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}
